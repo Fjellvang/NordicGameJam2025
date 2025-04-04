@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+    public float moveSpeed;
+    public float rotationSpeed;
+
     Rigidbody rig;
     Vector2 input;
     InputActions inputActions;
@@ -30,14 +32,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        var dir = new Vector3(input.x * speed, rig.linearVelocity.y, input.y * speed);
-        rig.linearVelocity = dir;
+        var moveDir = transform.forward * input.y;
+        var rotateDir = new Vector3(0, input.x, 0);
+
+        var linearVel = new Vector3(moveDir.x * moveSpeed, rig.linearVelocity.y, moveDir.z * moveSpeed);
+        var angularVel = rotateDir * rotationSpeed;
+
+        rig.angularVelocity = angularVel;
+        rig.linearVelocity = linearVel;
     }
 
     private void OnDisable()
     {
-
-
         inputActions.Player.Move.performed -= OnMove;
         inputActions.Player.Move.canceled -= OnMove;
         inputActions.Player.Disable();
