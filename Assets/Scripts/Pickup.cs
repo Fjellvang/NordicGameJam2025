@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour, IInteractable
     [SerializeField] Quaternion pickedUpRotation;
     [SerializeField] PickupType pickupType;
     [SerializeField] Outline outline;
+    [SerializeField] VariantAudio PickupAudio;
     private float startOutlineWidth;
     public void SetInteractable(bool isInteractable)
     {
@@ -40,6 +41,7 @@ public class Pickup : MonoBehaviour, IInteractable
         GetComponent<Rigidbody>().isKinematic = true;
         transform.DOLocalMove(Vector3.zero, 0.5f).SetEase(Ease.OutBack);
         transform.DOLocalRotate(pickedUpRotation.eulerAngles, 0.5f).SetEase(Ease.OutBack);
+        PickupAudio.PlaySoundPitched();
     }
 
     public void Drop()

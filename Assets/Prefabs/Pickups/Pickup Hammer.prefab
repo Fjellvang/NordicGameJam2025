@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 237157057620441124, guid: 73cbf8303b4b52c409fa115c507d9dde, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 3db12881db35078418ea1fef63ace426, type: 3}
+    - target: {fileID: 237157057620441124, guid: 73cbf8303b4b52c409fa115c507d9dde, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3db12881db35078418ea1fef63ace426, type: 3}
     - target: {fileID: 458301929271611163, guid: 73cbf8303b4b52c409fa115c507d9dde, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
