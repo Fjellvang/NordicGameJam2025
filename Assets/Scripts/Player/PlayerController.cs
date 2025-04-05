@@ -5,6 +5,11 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    public Vector3 lowerRayOriginOffset;
+    public float stepHeight; // Difference in height between lower and upper ray
+    public float lowerStepRayLength;
+    public float upperStepRayLength; // Upper ray should be a bit longer
+    public float stepJumpForce; // How much force to push the player with, when its going up a step
 
     public float maxSpeed;
     public float brakeFactor;
@@ -55,8 +60,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         onGround = Physics.Raycast(transform.position, Vector3.down, distToGround);
 
+        // Stepping up slopes
+
+        var lowerRayOrigin = transform.position + (transform.forward * lowerRayOriginOffset.z) + (transform.up * lowerRayOriginOffset.y) + (transform.right * lowerRayOriginOffset.x);
+        bool lowerHit = Physics.Raycast(lowerRayOrigin, transform.forward, lowerStepRayLength);
+        var upperRayOrigin = lowerRayOrigin + Vector3.up * stepHeight;
+        if (lowerHit)
+        {
+            bool upperHit = Physics.Raycast(upperRayOrigin, transform.forward, upperStepRayLength);
+            
+            if (!upperHit)
+            {
+                rig.AddForce(Vector3.up * stepJumpForce, ForceMode.Impulse);
+            }
+        }
+        
         // Rotation
 
         var rotateDir = new Vector3(0, input.x, 0);
