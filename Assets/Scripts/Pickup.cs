@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 
 public interface IInteractable 
@@ -10,24 +11,13 @@ public interface IInteractable
 public class Pickup : MonoBehaviour, IInteractable
 {
     [SerializeField] Quaternion pickedUpRotation;
-    private bool isPickedUp;
     public void Interact(Transform parent)
     {
         transform.SetParent(parent);
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = pickedUpRotation;
         GetComponent<Collider>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
-        isPickedUp = true;
-    }
-    
-    void Update()
-    {
-        if (isPickedUp)
-        {
-            transform.localPosition = Vector3.zero;
-            transform.localRotation = pickedUpRotation;
-        }
+        transform.DOLocalMove(Vector3.zero, 0.5f).SetEase(Ease.OutBack);
+        transform.DOLocalRotate(pickedUpRotation.eulerAngles, 0.5f).SetEase(Ease.OutBack);
     }
 
     public void Drop()
