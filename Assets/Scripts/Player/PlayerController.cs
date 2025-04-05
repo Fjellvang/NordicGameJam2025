@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        var moveDir = transform.forward * input.y;
+        var moveDir = input.y * transform.forward;
         var rotateDir = new Vector3(0, input.x, 0);
 
         var linearVel = new Vector3(moveDir.x * moveSpeed, rig.linearVelocity.y, moveDir.z * moveSpeed);
