@@ -10,6 +10,7 @@ public interface IInteractable
 public class Pickup : MonoBehaviour, IInteractable
 {
     [SerializeField] Quaternion pickedUpRotation;
+    private bool isPickedUp;
     public void Interact(Transform parent)
     {
         transform.SetParent(parent);
@@ -17,6 +18,16 @@ public class Pickup : MonoBehaviour, IInteractable
         transform.localRotation = pickedUpRotation;
         GetComponent<Collider>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
+        isPickedUp = true;
+    }
+    
+    void Update()
+    {
+        if (isPickedUp)
+        {
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = pickedUpRotation;
+        }
     }
 
     public void Drop()
