@@ -30,6 +30,7 @@ public class MuffledAudioPlayer : MonoBehaviour
         }
     }
 
+    [ContextMenu("Play Audio")]
     public void Play()
     {
         StartCoroutine(PlayAudioForSeconds());

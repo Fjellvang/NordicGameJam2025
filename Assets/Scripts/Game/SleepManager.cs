@@ -7,6 +7,7 @@ public class SleepManager : Singleton<SleepManager>
     [SerializeField]
     private float TimeToSleep = 60f; // Time in seconds before the sleep event is triggered
     private float _sleepTimer;
+    private bool isGameOver = false;
     
     public float TimeToSleepNormalized => _sleepTimer / TimeToSleep;
     
@@ -19,8 +20,9 @@ public class SleepManager : Singleton<SleepManager>
     void Update()
     {
         _sleepTimer -= Time.deltaTime;
-        if (_sleepTimer <= 0)
+        if (_sleepTimer <= 0 && !isGameOver)
         {
+            isGameOver = true;
             OnSleep?.Invoke(); // Trigger the sleep event
         }
     }
