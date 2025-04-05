@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meowAudioSource: {fileID: 4046122220929539228}
-  meowPitchVariance: 0.25
+  meowPitchVariance: 0.19
   playerInteraction: {fileID: 5125673947180839866}
 --- !u!82 &4046122220929539228
 AudioSource:
