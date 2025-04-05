@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6528629458e85c84ba60d8d3612711a3
+guid: 5b3b2467f39e8db47817b6539c2118c4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -10,7 +10,7 @@ ModelImporter:
       name: colorMap
     second: {fileID: 2100000, guid: 283e972fef8028040825e5ec3aaffc8e, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
