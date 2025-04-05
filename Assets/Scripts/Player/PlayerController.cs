@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rig;
     Vector2 input;
     InputActions inputActions;
+    public event Action OnInteractPerformed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void OnEnable()
     {
@@ -25,6 +26,12 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Move.performed += OnMove;
         inputActions.Player.Move.canceled += OnMove;
         inputActions.Player.Jump.performed += OnJump;
+        inputActions.Player.Interact.performed += OnInteract;
+    }
+
+    public void OnInteract(InputAction.CallbackContext obj)
+    {
+        OnInteractPerformed?.Invoke();
     }
 
     private void Awake()
@@ -89,6 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         inputActions.Player.Move.performed -= OnMove;
         inputActions.Player.Move.canceled -= OnMove;
+        inputActions.Player.Interact.performed -= OnInteract;
         inputActions.Player.Jump.performed -= OnJump;
         inputActions.Player.Disable();
     }
