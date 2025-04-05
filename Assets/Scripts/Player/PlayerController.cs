@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem dustEmitter;
+    public float minLandingVelocityForDust;
+    public int particlesEmittedWhenLanding;
+
     public Vector3 lowerRayOriginOffset;
     public float stepHeight; // Difference in height between lower and upper ray
     public float lowerStepRayLength;
@@ -35,6 +39,8 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Move.canceled += OnMove;
         inputActions.Player.Jump.performed += OnJump;
         inputActions.Player.Interact.performed += OnInteract;
+
+        dustEmitter.Stop();
     }
 
     public void OnInteract(InputAction.CallbackContext obj)
@@ -50,6 +56,15 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputAction.CallbackContext obj)
     {
         input = obj.ReadValue<Vector2>();
+        
+        // Dust particles
+        if (input == Vector2.zero || onGround == false)
+        {
+            dustEmitter.Stop();
+        } else
+        {
+            dustEmitter.Play();
+        }
     }
 
     private void OnJump(InputAction.CallbackContext obj)
@@ -58,13 +73,25 @@ public class PlayerController : MonoBehaviour
         {
             var jumpDir = transform.forward + Vector3.up;
             rig.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
+            dustEmitter.Stop();
         }
     }
 
     private void FixedUpdate()
     {
+        // Check if cat just landed on ground and velocity.
+        var onGroundLastUpdate = onGround;
         
         onGround = Physics.Raycast(transform.position, Vector3.down, distToGround);
+
+        if (onGround == true && onGroundLastUpdate == false)
+        {
+            if (rig.linearVelocity.y < minLandingVelocityForDust)
+            {
+                dustEmitter.Emit(particlesEmittedWhenLanding);
+            }
+        }
+
 
         // Stepping up slopes
 
