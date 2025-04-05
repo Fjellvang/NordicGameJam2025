@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
 
     public float maxSpeed;
     public float brakeFactor;
-    public AnimationCurve TurnAccelCurve;
+    public float inAirSpeedFactor;
     public float rotationSpeed;
     public float jumpForce;
     public float distToGround;
+    public AnimationCurve TurnAccelCurve;
     bool onGround;
     Rigidbody rig;
     Vector2 input;
@@ -67,6 +68,10 @@ public class PlayerController : MonoBehaviour
         if (input.y == 0 && onGround)
         {
             velocityDiff *= brakeFactor;
+        }
+        if (!onGround)
+        {
+            velocityDiff *= inAirSpeedFactor;
         }
 
         // The curve is designed to make it brake faster when doing a 180 turn so its more responsive.

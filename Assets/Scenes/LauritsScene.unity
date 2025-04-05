@@ -461,6 +461,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4851132106732166937, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
+      propertyPath: inAirSpeedFactor
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
       propertyPath: TurnAccelCurve.m_Curve.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1797,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 137707814690489261, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2018261
+      value: -5.551826
       objectReference: {fileID: 0}
     - target: {fileID: 137707814690489261, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1805,23 +1809,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 137707814690489261, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.514854
+      value: -17.485144
       objectReference: {fileID: 0}
     - target: {fileID: 137707814690489261, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97475666
+      value: 0.98173577
       objectReference: {fileID: 0}
     - target: {fileID: 137707814690489261, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.21830358
+      value: 0.14309892
       objectReference: {fileID: 0}
     - target: {fileID: 137707814690489261, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.045697667
+      value: 0.12405902
       objectReference: {fileID: 0}
     - target: {fileID: 137707814690489261, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.010234311
+      value: -0.018082986
       objectReference: {fileID: 0}
     - target: {fileID: 2058381032078801618, guid: 7bcb98171d0814c49a40c649432f53fe, type: 3}
       propertyPath: DefaultBlend.Time
