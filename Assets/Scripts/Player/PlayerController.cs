@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    public VariantAudio LandingAudio;
     public ParticleSystem dustEmitter;
     public float minLandingVelocityForDust;
     public int particlesEmittedWhenLanding;
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
             if (rig.linearVelocity.y < minLandingVelocityForDust)
             {
                 dustEmitter.Emit(particlesEmittedWhenLanding);
+                LandingAudio.PlaySoundPitched();
             }
         }
 
