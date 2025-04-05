@@ -22,26 +22,36 @@ public class PlayerInteractionCheck : MonoBehaviour
             
             if (_interactablesInRange.Count > 0)
             {
-                _interactablesInRange[0].Interact(GrabPoint);
-                _currentlyGrabbedObject = _interactablesInRange[0];
-                _interactablesInRange.RemoveAt(0);
+                var interactable = _interactablesInRange[0];
+                interactable.Interact(GrabPoint);
+                _currentlyGrabbedObject = interactable;
+                RemoveInteractable(interactable);
             }
         };
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Entered");
         if(other.TryGetComponent<IInteractable>(out var interactable))
         {
-            Debug.Log("Interactable Found");
             _interactablesInRange.Add(interactable);
+            interactable.OnDestroyed += () =>
+            {
+                RemoveInteractable(interactable);
+            };
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent<IInteractable>(out var interactable))
+        {
+            RemoveInteractable(interactable);
+        }
+    }
+    
+    private void RemoveInteractable(IInteractable interactable)
+    {
+        if (_interactablesInRange.Contains(interactable))
         {
             _interactablesInRange.Remove(interactable);
         }

@@ -1,16 +1,14 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 
-public interface IInteractable 
-{
-    void Interact(Transform parent);
-    void Drop();
-}
-    
 public class Pickup : MonoBehaviour, IInteractable
 {
     [SerializeField] Quaternion pickedUpRotation;
+    [SerializeField] PickupType pickupType;
+    public event Action OnDestroyed;
+    public PickupType PickupType => pickupType;
     public void Interact(Transform parent)
     {
         transform.SetParent(parent);
@@ -28,4 +26,16 @@ public class Pickup : MonoBehaviour, IInteractable
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + currentParent.forward * 5, ForceMode.Impulse);
     }
+
+    private void OnDisable()
+    {
+        OnDestroyed?.Invoke();
+    }
+}
+
+public enum PickupType
+{
+    None,
+    Hammer,
+    Guitar,
 }
