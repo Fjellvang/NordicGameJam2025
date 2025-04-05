@@ -6,6 +6,9 @@ using UnityEngine;
 public class DeliveryScript : MonoBehaviour
 {
     public PickupType expectedPickupType;
+
+    [Tooltip("Amout of sleep time to add when delivery is successful")]
+    public float SleepValue = 5f;
     public event Action OnDeliveryCompleted;
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +18,7 @@ public class DeliveryScript : MonoBehaviour
             {
                 // Handle successful delivery
                 Debug.Log("Delivery successful!");
+                SleepManager.Instance.AddSleepTime(SleepValue);
                 OnDeliveryCompleted?.Invoke();
                 Destroy(pickup.gameObject);
             }
