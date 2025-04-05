@@ -36,7 +36,7 @@ public class Pickup : MonoBehaviour, IInteractable
     public void Interact(Transform parent)
     {
         transform.SetParent(parent);
-        GetComponent<Collider>().enabled = false;
+        SetColliderEnabled(false);
         GetComponent<Rigidbody>().isKinematic = true;
         transform.DOLocalMove(Vector3.zero, 0.5f).SetEase(Ease.OutBack);
         transform.DOLocalRotate(pickedUpRotation.eulerAngles, 0.5f).SetEase(Ease.OutBack);
@@ -44,11 +44,20 @@ public class Pickup : MonoBehaviour, IInteractable
 
     public void Drop()
     {
+        DOTween.KillAll();
         var currentParent = transform.parent;
         transform.SetParent(null);
-        GetComponent<Collider>().enabled = true;
+        SetColliderEnabled(true);
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().AddForce(Vector3.up * 5 + currentParent.forward * 5, ForceMode.Impulse);
+    }
+    
+    private void SetColliderEnabled(bool isEnabled)
+    {
+        foreach (var collider in GetComponents<Collider>())
+        {
+            collider.enabled = isEnabled;
+        }
     }
 
     private void OnDisable()

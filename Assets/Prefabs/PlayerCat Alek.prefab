@@ -263,6 +263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9f14e8af469374283366f90b898543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowerRayOriginOffset: {x: 0, y: -0.45, z: 0.2}
+  stepHeight: 0.2
+  lowerStepRayLength: 0.2
+  upperStepRayLength: 0.24
+  stepJumpForce: 0.3
   maxSpeed: 18
   brakeFactor: 1.5
   inAirSpeedFactor: 0.5
@@ -371,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meowAudioSource: {fileID: 4046122220929539228}
-  meowPitchVariance: 0.25
+  meowPitchVariance: 0.19
   playerInteraction: {fileID: 5125673947180839866}
 --- !u!82 &4046122220929539228
 AudioSource:

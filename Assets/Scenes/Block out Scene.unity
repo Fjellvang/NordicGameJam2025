@@ -1370,7 +1370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2407095417932489907, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 0.664
       objectReference: {fileID: 0}
     - target: {fileID: 2407095417932489907, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1839,7 +1839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6597352985292513618, guid: bf761ff92d2f63e4aaf2f18267d1aa7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6597352985292513618, guid: bf761ff92d2f63e4aaf2f18267d1aa7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2315,11 +2315,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 352134690135526796, guid: 9ef2c29d0a9fa304c8a80cd753cfbd0e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 352134690135526796, guid: 9ef2c29d0a9fa304c8a80cd753cfbd0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 352134690135526796, guid: 9ef2c29d0a9fa304c8a80cd753cfbd0e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2860,7 +2860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8749059750005100570, guid: 478b9ba9072a6ec429519824eb01ac3e, type: 3}
       propertyPath: PlayForSeconds
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8749059750005100570, guid: 478b9ba9072a6ec429519824eb01ac3e, type: 3}
       propertyPath: deliveryScript
@@ -4426,6 +4426,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2356185082930611317, guid: f5b84b655ca1db048b2b462a4cbdf838, type: 3}
+      propertyPath: TimeToSleep
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7152443607970454011, guid: f5b84b655ca1db048b2b462a4cbdf838, type: 3}
       propertyPath: m_Name
       value: SleepManager
@@ -4574,18 +4578,6 @@ PrefabInstance:
     - target: {fileID: 7832187205247022024, guid: 1c0e193b8f9c6034dbc55f091e7b72c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039173289189959620, guid: 1c0e193b8f9c6034dbc55f091e7b72c3, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8039173289189959620, guid: 1c0e193b8f9c6034dbc55f091e7b72c3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 8117387965770650059, guid: 1c0e193b8f9c6034dbc55f091e7b72c3, type: 3}
-      propertyPath: m_Value
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

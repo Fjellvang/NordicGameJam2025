@@ -1,6 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+public enum InteractMode
+{
+    CanMeow,
+    CanInteract,
+    CanDrop
+}
 public class PlayerInteractionCheck : MonoBehaviour
 {
     public Transform GrabPoint;
@@ -8,11 +14,14 @@ public class PlayerInteractionCheck : MonoBehaviour
     private List<IInteractable> _interactablesInRange = new List<IInteractable>();
     private IInteractable _currentlyGrabbedObject;
     public event System.Action OnInteractFailed;
-
+    public event System.Action<InteractMode> OnInteractUpdated;
+    private InteractMode _interactMode;
+    
     private void Awake()
     {
         PlayerController.OnInteractPerformed += () =>
         {
+            
             if (_currentlyGrabbedObject != null)
             {
                 _currentlyGrabbedObject.Drop();
@@ -33,6 +42,22 @@ public class PlayerInteractionCheck : MonoBehaviour
         };
     }
 
+    private void UpdateInteractMode()
+    {
+        if (_currentlyGrabbedObject != null)
+        {
+            _interactMode = InteractMode.CanDrop;
+        }
+        else if (_interactablesInRange.Count > 0)
+        {
+            _interactMode = InteractMode.CanInteract;
+        }
+        else
+        {
+            _interactMode = InteractMode.CanMeow;
+        }
+        OnInteractUpdated?.Invoke(_interactMode);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent<IInteractable>(out var interactable))
@@ -44,6 +69,7 @@ public class PlayerInteractionCheck : MonoBehaviour
                 RemoveInteractable(interactable);
             };
         }
+        UpdateInteractMode();
     }
     private void OnTriggerExit(Collider other)
     {
@@ -51,6 +77,7 @@ public class PlayerInteractionCheck : MonoBehaviour
         {
             RemoveInteractable(interactable);
         }
+        UpdateInteractMode();
     }
     
     private void RemoveInteractable(IInteractable interactable)
