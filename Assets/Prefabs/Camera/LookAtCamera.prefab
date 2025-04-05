@@ -91,8 +91,8 @@ MonoBehaviour:
   Composition:
     ScreenPosition: {x: 0.004576698, y: 0.0018083155}
     DeadZone:
-      Enabled: 1
-      Size: {x: 0.32509533, y: 0.5471186}
+      Enabled: 0
+      Size: {x: 0.30577162, y: 0.5471186}
     HardLimits:
       Enabled: 0
       Size: {x: 0.8, y: 0.8}
