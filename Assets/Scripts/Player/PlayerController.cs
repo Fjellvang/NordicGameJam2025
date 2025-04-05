@@ -6,8 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed;
     public float maxSpeed;
+    public float brakeFactor;
+    public AnimationCurve TurnAccelCurve;
     public float rotationSpeed;
     public float jumpForce;
     public float distToGround;
@@ -48,16 +49,35 @@ public class PlayerController : MonoBehaviour
     {
         onGround = Physics.Raycast(transform.position, Vector3.down, distToGround);
 
+        // Rotation
+
+        var rotateDir = new Vector3(0, input.x, 0);
+        var goalRotation = rotateDir * rotationSpeed;
+        var torqueDiff = goalRotation - rig.angularVelocity;
+
+        rig.AddTorque(torqueDiff);
+
+        // Movement 
+
         Vector3 moveDir = input.y * transform.forward;
         var goalVelocity = moveDir * maxSpeed;
-        var velocityDiff = goalVelocity - rig.linearVelocity;
-        rig.AddForce(velocityDiff, ForceMode.Force);
+        var velocityDiff = (goalVelocity - rig.linearVelocity);
+        
+        
+        if (input.y == 0 && onGround)
+        {
+            velocityDiff *= brakeFactor;
+        }
+
+        // The curve is designed to make it brake faster when doing a 180 turn so its more responsive.
+        velocityDiff *= TurnAccelCurve.Evaluate(Vector3.Dot(rig.linearVelocity.normalized, moveDir));
+
+        rig.AddForce(velocityDiff, ForceMode.Acceleration);
+        
     }
 
     private void Update()
     {
-        var rotateDir = new Vector3(0, input.x, 0);
-        rig.angularVelocity = rotateDir * rotationSpeed;
     }
 
     private void OnDisable()
