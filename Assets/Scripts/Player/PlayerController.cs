@@ -5,10 +5,13 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+
     public float moveSpeed;
+    public float maxSpeed;
     public float rotationSpeed;
     public float jumpForce;
     public float distToGround;
+    bool onGround;
     Rigidbody rig;
     Vector2 input;
     InputActions inputActions;
@@ -34,19 +37,27 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext obj)
     {
-        if (Physics.Raycast(transform.position, Vector3.down, distToGround))
+        if (onGround)
         {
-            rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            var jumpDir = transform.forward + Vector3.up;
+            rig.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        onGround = Physics.Raycast(transform.position, Vector3.down, distToGround);
+
+        Vector3 moveDir = input.y * transform.forward;
+        var goalVelocity = moveDir * maxSpeed;
+        var velocityDiff = goalVelocity - rig.linearVelocity;
+        rig.AddForce(velocityDiff, ForceMode.Force);
     }
 
     private void Update()
     {
-        var moveDir = input.y * transform.forward;
         var rotateDir = new Vector3(0, input.x, 0);
-
         rig.angularVelocity = rotateDir * rotationSpeed;
-        rig.linearVelocity = new Vector3(moveDir.x * moveSpeed, rig.linearVelocity.y, moveDir.z * moveSpeed);
     }
 
     private void OnDisable()

@@ -584,12 +584,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4851132106732166937, guid: c60ef9acc2d495440b5fbb0df0f3a989, type: 3}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: c60ef9acc2d495440b5fbb0df0f3a989, type: 3}
       propertyPath: jumpForce
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4851132106732166937, guid: c60ef9acc2d495440b5fbb0df0f3a989, type: 3}
+      propertyPath: moveSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: c60ef9acc2d495440b5fbb0df0f3a989, type: 3}
       propertyPath: distToGround
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7720688717463886511, guid: c60ef9acc2d495440b5fbb0df0f3a989, type: 3}
       propertyPath: m_Name
