@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-
+    public bool OnGround => onGround;
+    public bool IsMoving => rig.linearVelocity.sqrMagnitude > 0.01f;
+    
     public float maxSpeed;
     public float brakeFactor;
     public float inAirSpeedFactor;
@@ -85,12 +87,8 @@ public class PlayerController : MonoBehaviour
         velocityDiff *= TurnAccelCurve.Evaluate(Vector3.Dot(rig.linearVelocity.normalized, moveDir));
 
         rig.AddForce(velocityDiff, ForceMode.Acceleration);
-        
     }
 
-    private void Update()
-    {
-    }
 
     private void OnDisable()
     {
