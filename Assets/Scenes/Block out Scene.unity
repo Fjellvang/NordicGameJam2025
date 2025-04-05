@@ -124,6 +124,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7310528457262552827, guid: 1ed2f22bdbbef7b488c7b53e5130fd85, type: 3}
   m_PrefabInstance: {fileID: 2492353754154739325}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &285280742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8233646222858180988, guid: 9ef2c29d0a9fa304c8a80cd753cfbd0e, type: 3}
+  m_PrefabInstance: {fileID: 1154878724}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &294767617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,6 +2366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup Hammer
       objectReference: {fileID: 0}
+    - target: {fileID: 8289891870901733145, guid: 9ef2c29d0a9fa304c8a80cd753cfbd0e, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 285280742}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
