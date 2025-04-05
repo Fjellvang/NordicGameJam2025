@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -8,6 +9,9 @@ public class MuffledAudioPlayer : MonoBehaviour
 {
     public AudioMixerGroup insideaudioMixerGroup;
     public AudioMixerGroup outsideaudioMixerGroup;
+    
+    [SerializeField]
+    private float PlayForSeconds = 5f;
     private AudioSource audioSource;
     [SerializeField]
     DeliveryScript deliveryScript;
@@ -28,7 +32,14 @@ public class MuffledAudioPlayer : MonoBehaviour
 
     public void Play()
     {
+        StartCoroutine(PlayAudioForSeconds());
+    }
+    
+    IEnumerator PlayAudioForSeconds()
+    {
         audioSource.Play();
+        yield return new WaitForSeconds(PlayForSeconds);
+        audioSource.Stop();
     }
 
     [ContextMenu("Play Audio Outside")]

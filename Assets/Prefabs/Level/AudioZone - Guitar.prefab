@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insideaudioMixerGroup: {fileID: 24300002, guid: 2b464e2427f19ac4e9fc78e5e0a773a5, type: 2}
   outsideaudioMixerGroup: {fileID: 24300002, guid: 8abe61cf7f5adf7459ee25eafb9c3f42, type: 2}
+  PlayForSeconds: 10
+  deliveryScript: {fileID: 0}
 --- !u!82 &575516035704398447
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61,9 +63,9 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 25af509065d55394badc3a0aa9f18f66, type: 3}
   m_Resource: {fileID: 8300000, guid: 25af509065d55394badc3a0aa9f18f66, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
