@@ -53,8 +53,8 @@ public class PlayerController : MonoBehaviour
         // Rotation
 
         var rotateDir = new Vector3(0, input.x, 0);
-        var goalRotation = rotateDir * rotationSpeed;
-        var torqueDiff = goalRotation - rig.angularVelocity;
+        var goalTorque= rotateDir * rotationSpeed;
+        var torqueDiff = goalTorque - rig.angularVelocity;
 
         rig.AddTorque(torqueDiff);
 
