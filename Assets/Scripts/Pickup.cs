@@ -71,4 +71,5 @@ public enum PickupType
     None,
     Hammer,
     Guitar,
+    Battery
 }
