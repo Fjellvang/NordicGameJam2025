@@ -35,6 +35,7 @@ public class PlayerInteractionCheck : MonoBehaviour
         if(other.TryGetComponent<IInteractable>(out var interactable))
         {
             _interactablesInRange.Add(interactable);
+            interactable.SetInteractable(true);
             interactable.OnDestroyed += () =>
             {
                 RemoveInteractable(interactable);
@@ -53,6 +54,7 @@ public class PlayerInteractionCheck : MonoBehaviour
     {
         if (_interactablesInRange.Contains(interactable))
         {
+            interactable.SetInteractable(false);
             _interactablesInRange.Remove(interactable);
         }
     }

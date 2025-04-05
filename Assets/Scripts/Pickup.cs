@@ -7,6 +7,30 @@ public class Pickup : MonoBehaviour, IInteractable
 {
     [SerializeField] Quaternion pickedUpRotation;
     [SerializeField] PickupType pickupType;
+    [SerializeField] Outline outline;
+    private float startOutlineWidth;
+    public void SetInteractable(bool isInteractable)
+    {
+        if (isInteractable)
+        {
+            DOTween.To(
+                () => outline.OutlineWidth, 
+                x => outline.OutlineWidth = x, 3, 0.5f).SetEase(Ease.OutBounce);
+        }
+        else
+        {
+            DOTween.To(
+                () => outline.OutlineWidth, 
+                x => outline.OutlineWidth = x, startOutlineWidth, 0.5f)
+                .SetEase(Ease.OutBack);
+        }
+    }
+    
+    void Awake()
+    {
+        startOutlineWidth = outline.OutlineWidth;
+    }
+
     public event Action OnDestroyed;
     public PickupType PickupType => pickupType;
     public void Interact(Transform parent)
