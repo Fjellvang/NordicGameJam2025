@@ -5,9 +5,9 @@ public class PlayerInteractionCheck : MonoBehaviour
 {
     public Transform GrabPoint;
     public PlayerController PlayerController;
-    
     private List<IInteractable> _interactablesInRange = new List<IInteractable>();
     private IInteractable _currentlyGrabbedObject;
+    public event System.Action OnInteractFailed;
 
     private void Awake()
     {
@@ -26,7 +26,10 @@ public class PlayerInteractionCheck : MonoBehaviour
                 interactable.Interact(GrabPoint);
                 _currentlyGrabbedObject = interactable;
                 RemoveInteractable(interactable);
+                return;
             }
+            
+            OnInteractFailed?.Invoke();
         };
     }
 
