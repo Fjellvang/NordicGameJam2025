@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e88e5186b5ddc64ea5d94b42cb7a213
+guid: 50dfade91e4713c40a969b84cd8fbff2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: colorMap
     second: {fileID: 2100000, guid: 283e972fef8028040825e5ec3aaffc8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass_shader
+    second: {fileID: 2100000, guid: f94ad0ec0ae53114485d6f6b943f1412, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
