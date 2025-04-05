@@ -1046,6 +1046,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
+      propertyPath: jumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
+      propertyPath: distToGround
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851132106732166937, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
+      propertyPath: rotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7720688717463886511, guid: e6d0ea46e2a80b44abd48ff9f7791fb1, type: 3}
       propertyPath: m_Name
       value: PlayerCat Alek

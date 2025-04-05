@@ -5,7 +5,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
+
+    public float maxSpeed;
+    public float brakeFactor;
+    public float inAirSpeedFactor;
+    public float rotationSpeed;
+    public float jumpForce;
+    public float distToGround;
+    public AnimationCurve TurnAccelCurve;
+    bool onGround;
     Rigidbody rig;
     Vector2 input;
     InputActions inputActions;
@@ -17,6 +25,7 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Enable();
         inputActions.Player.Move.performed += OnMove;
         inputActions.Player.Move.canceled += OnMove;
+        inputActions.Player.Jump.performed += OnJump;
         inputActions.Player.Interact.performed += OnInteract;
     }
 
@@ -35,10 +44,52 @@ public class PlayerController : MonoBehaviour
         input = obj.ReadValue<Vector2>();
     }
 
+    private void OnJump(InputAction.CallbackContext obj)
+    {
+        if (onGround)
+        {
+            var jumpDir = transform.forward + Vector3.up;
+            rig.AddForce(jumpDir * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        onGround = Physics.Raycast(transform.position, Vector3.down, distToGround);
+
+        // Rotation
+
+        var rotateDir = new Vector3(0, input.x, 0);
+        var goalTorque= rotateDir * rotationSpeed;
+        var torqueDiff = goalTorque - rig.angularVelocity;
+
+        rig.AddTorque(torqueDiff);
+
+        // Movement 
+
+        Vector3 moveDir = input.y * transform.forward;
+        var goalVelocity = moveDir * maxSpeed;
+        var velocityDiff = (goalVelocity - rig.linearVelocity);
+        
+        
+        if (input.y == 0 && onGround)
+        {
+            velocityDiff *= brakeFactor;
+        }
+        if (!onGround)
+        {
+            velocityDiff *= inAirSpeedFactor;
+        }
+
+        // The curve is designed to make it brake faster when doing a 180 turn so its more responsive.
+        velocityDiff *= TurnAccelCurve.Evaluate(Vector3.Dot(rig.linearVelocity.normalized, moveDir));
+
+        rig.AddForce(velocityDiff, ForceMode.Acceleration);
+        
+    }
+
     private void Update()
     {
-        var dir = new Vector3(input.x * speed, rig.linearVelocity.y, input.y * speed);
-        rig.linearVelocity = dir;
     }
 
     private void OnDisable()
@@ -46,6 +97,7 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Move.performed -= OnMove;
         inputActions.Player.Move.canceled -= OnMove;
         inputActions.Player.Interact.performed -= OnInteract;
+        inputActions.Player.Jump.performed -= OnJump;
         inputActions.Player.Disable();
     }
 }
