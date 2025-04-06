@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5824639349334891650}
   - component: {fileID: 4113105286248472569}
+  - component: {fileID: 2810779991530936355}
   m_Layer: 0
   m_Name: IntroTimeline
   m_TagString: Untagged
@@ -55,6 +56,18 @@ PlayableDirector:
     m_References:
     - 4a1546cc9d8d0cd47aae2e5b63b6fe1e: {fileID: 5497696590738685104}
     - 3b57ba5691824154986d0b11424e1110: {fileID: 0}
+--- !u!114 &2810779991530936355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114908847078689695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91fc1d656542497fbb6133dd7fd3b898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5514024205966692498
 GameObject:
   m_ObjectHideFlags: 0
