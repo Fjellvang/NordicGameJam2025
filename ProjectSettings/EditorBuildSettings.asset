@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 2d8854aa2e9a94d45995aa5bff3030bf
   - enabled: 1
+    path: Assets/Scenes/GameSceneDecoor.unity
+    guid: 01243bb022e43b34b888a961ea5669a8
+  - enabled: 1
     path: Assets/Scenes/Block out Scene.unity
     guid: da0dd251e849a1f4baf8f0db12ad39f6
   - enabled: 1

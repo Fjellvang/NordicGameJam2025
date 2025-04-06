@@ -53,7 +53,7 @@ PrefabInstance:
     - target: {fileID: 3287879181163950511, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
       propertyPath: OnDeliveryCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 3670735315642594007}
+      objectReference: {fileID: 2134654896802765888}
     - target: {fileID: 3287879181163950511, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
       propertyPath: OnDeliveryCompleted.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
@@ -387,9 +387,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7330376907599857544, guid: 4c44bed69f1a45543bf13a2e4ae633f6, type: 3}
   m_PrefabInstance: {fileID: 8266083875783070784}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3670735315642594007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4631412560333760151, guid: 4c44bed69f1a45543bf13a2e4ae633f6, type: 3}
+--- !u!198 &2134654896802765888 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8009887425274333184, guid: 4c44bed69f1a45543bf13a2e4ae633f6, type: 3}
   m_PrefabInstance: {fileID: 8266083875783070784}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8665648166293187866
