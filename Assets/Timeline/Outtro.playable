@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 4.283333333333333
+    m_Start: 9.04999999999999
     m_ClipIn: 0
     m_Asset: {fileID: 100045262884990764}
     m_Duration: 0.8957916666666667
@@ -160,7 +160,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Cartoon, Animal, Cat, Meow, Human Mimic SND15123
   - m_Version: 1
-    m_Start: 5.179125
+    m_Start: 9.945791666666658
     m_ClipIn: 0
     m_Asset: {fileID: 7030910923071326866}
     m_Duration: 0.8957916666666667
@@ -169,7 +169,7 @@ MonoBehaviour:
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: -1
+    m_BlendOutDuration: 0
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -196,25 +196,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -229,7 +211,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Cartoon, Animal, Cat, Meow, Human Mimic SND15123
   - m_Version: 1
-    m_Start: 6.074916666666667
+    m_Start: 10.841583333333318
     m_ClipIn: 0
     m_Asset: {fileID: -9006799726350004609}
     m_Duration: 0.8957916666666667
@@ -237,29 +219,11 @@ MonoBehaviour:
     m_ParentTrack: {fileID: 737070554058083694}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: -1
+    m_BlendInDuration: 0
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -325,10 +289,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 5
     m_ClipIn: 0
     m_Asset: {fileID: 8022202632800669642}
-    m_Duration: 7.5166666666666675
+    m_Duration: 7.4833333333333325
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2349000567867640710}
     m_EaseInDuration: 1
@@ -451,10 +415,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0
+    m_Start: 5.916666666666668
     m_ClipIn: 0
     m_Asset: {fileID: -104261477140446545}
-    m_Duration: 7.5166666666666675
+    m_Duration: 6.566666666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 9039208695628038479}
     m_EaseInDuration: 0
