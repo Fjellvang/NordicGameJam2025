@@ -26321,6 +26321,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.76
       objectReference: {fileID: 0}
+    - target: {fileID: 6903790618589169225, guid: ec91b7e20bfb25243b19627fa6f95a55, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6932212949101922690, guid: ec91b7e20bfb25243b19627fa6f95a55, type: 3}
       propertyPath: m_Size.x
       value: 4
