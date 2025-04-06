@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c483b26906bdb9543b06b6f462ec7f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToSleep: 60
+  TimeToSleep: 360
