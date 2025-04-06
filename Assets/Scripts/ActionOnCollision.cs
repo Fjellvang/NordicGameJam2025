@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Action OnCollision : MonoBehaviour
+public class ActionOnCollision : MonoBehaviour
 {
     public float MinForceMagnitude;
     public UnityEvent OnCollide;
