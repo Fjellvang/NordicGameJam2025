@@ -16,10 +16,6 @@ PrefabInstance:
       propertyPath: m_InitialState
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4113105286248472569, guid: b829c3e2cb43aa7459d786b473071b41, type: 3}
-      propertyPath: m_PlayableAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: d698ea4f373d7f84a9f4c676a12bf380, type: 2}
     - target: {fileID: 5824639349334891650, guid: b829c3e2cb43aa7459d786b473071b41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
