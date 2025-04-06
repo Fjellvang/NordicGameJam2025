@@ -52,6 +52,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 2349000567867640710, guid: 491044f6d6f0bd748b05df52d41e2439, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 9039208695628038479, guid: 491044f6d6f0bd748b05df52d41e2439, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 4a1546cc9d8d0cd47aae2e5b63b6fe1e: {fileID: 5497696590738685104}
@@ -94,13 +96,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5514024205966692498}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.16598578, y: -0.009982317, z: 0.001680319, w: 0.98607624}
+  m_LocalRotation: {x: 0.099712834, y: -0.78838277, z: 0.13270809, w: 0.59236693}
   m_LocalPosition: {x: 0, y: 2.44, z: 6.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5824639349334891650}
-  m_LocalEulerAnglesHint: {x: 19.11, y: -1.16, z: 0}
+  m_LocalEulerAnglesHint: {x: 19.11, y: -106.16, z: 0}
 --- !u!114 &5497696590738685104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +162,7 @@ MonoBehaviour:
   PivotOffset: {x: 0, y: 0, z: 0}
   AmplitudeGain: 1
   FrequencyGain: 1
-  m_NoiseOffsets: {x: 0, y: 0, z: 0}
+  m_NoiseOffsets: {x: -221.7792, y: 621.67096, z: 742.37036}
 --- !u!1 &9196460688713525373
 GameObject:
   m_ObjectHideFlags: 0
