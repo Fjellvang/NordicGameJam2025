@@ -23,11 +23,11 @@ public class DeliveryScript : MonoBehaviour
             if (pickup.PickupType == expectedPickupType)
             {
                 // Handle successful delivery
-                Debug.Log("Delivery successful!");
                 SleepManager.Instance.AddSleepTime(SleepValue);
                 OnDeliveryCompleted?.Invoke();
                 Destroy(pickup.gameObject);
                 isDeliveryCompleted = true;
+                GameStateTracker.Instance.SetPickupCompleted(expectedPickupType);
             }
             else
             {
