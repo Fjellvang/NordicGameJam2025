@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public class DeliveryScript : MonoBehaviour
@@ -9,7 +10,12 @@ public class DeliveryScript : MonoBehaviour
 
     [Tooltip("Amout of sleep time to add when delivery is successful")]
     public float SleepValue = 5f;
-    public event Action OnDeliveryCompleted;
+    bool isDeliveryCompleted = false;
+    public UnityEvent OnDeliveryCompleted;
+    public UnityEvent OnCatEntered;
+    public UnityEvent OnWrongItem;
+    
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<Pickup>(out var pickup))
@@ -21,12 +27,16 @@ public class DeliveryScript : MonoBehaviour
                 SleepManager.Instance.AddSleepTime(SleepValue);
                 OnDeliveryCompleted?.Invoke();
                 Destroy(pickup.gameObject);
+                isDeliveryCompleted = true;
             }
             else
             {
-                // Handle incorrect item
-                Debug.Log("Incorrect item delivered.");
+                OnWrongItem?.Invoke();
             }
+        }
+        else if (other.CompareTag("Player") && !isDeliveryCompleted)
+        {
+            OnCatEntered?.Invoke();
         }
     }
 }

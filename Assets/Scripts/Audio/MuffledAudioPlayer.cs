@@ -22,7 +22,7 @@ public class MuffledAudioPlayer : MonoBehaviour
         audioSource.outputAudioMixerGroup = outsideaudioMixerGroup;
         if (deliveryScript)
         {
-            deliveryScript.OnDeliveryCompleted += Play;
+            deliveryScript.OnDeliveryCompleted.AddListener(Play);
         }
         else
         {

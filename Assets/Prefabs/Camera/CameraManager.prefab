@@ -83,8 +83,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4232536668772649637}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14309892, y: 0.12405902, z: -0.018082986, w: 0.98173577}
-  m_LocalPosition: {x: -4.35, y: 6, z: -17.48}
+  m_LocalRotation: {x: -0.034699865, y: -0.958713, z: 0.13388523, w: -0.2484756}
+  m_LocalPosition: {x: -7.476488, y: 6.7172136, z: 26.481335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123,7 +123,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -235,11 +235,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 211085580739298189, guid: c5a54dfc5018d0f4a9a89ea2620670e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.35
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 211085580739298189, guid: c5a54dfc5018d0f4a9a89ea2620670e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 211085580739298189, guid: c5a54dfc5018d0f4a9a89ea2620670e9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -463,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7597188076479292226, guid: c5a54dfc5018d0f4a9a89ea2620670e9, type: 3}
       propertyPath: m_Name
-      value: LookAtCamera (1)
+      value: Camera In Home apartment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -946,11 +946,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 363171271659138854, guid: c5a54dfc5018d0f4a9a89ea2620670e9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 363171271659138854, guid: c5a54dfc5018d0f4a9a89ea2620670e9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 363171271659138854, guid: c5a54dfc5018d0f4a9a89ea2620670e9, type: 3}
       propertyPath: m_LocalPosition.z

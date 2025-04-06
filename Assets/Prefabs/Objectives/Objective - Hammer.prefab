@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4732954848111958564
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2119099930614424720, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_Name
+      value: Objective - Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639767077890847034, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287879181163950511, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: expectedPickupType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861117522541876036, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 034089ae3854c1e4e943e430e09a5055, type: 3}
+    - target: {fileID: 4861117522541876036, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 034089ae3854c1e4e943e430e09a5055, type: 3}
+    - target: {fileID: 5677583639653218259, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_text
+      value: 'Oh no i need to get this picture on my wall....
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751429040509786372, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_text
+      value: That would NOT work as a hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0579915
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342295848316751905, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb5283657defd0c44a5b24e6d46a569e, type: 3}
