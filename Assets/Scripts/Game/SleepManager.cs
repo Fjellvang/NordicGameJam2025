@@ -1,9 +1,10 @@
 using DotsShooter;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SleepManager : Singleton<SleepManager>
 {
-    public event System.Action OnSleep;
+    public UnityEvent OnSleep;
     [SerializeField]
     private float TimeToSleep = 60f; // Time in seconds before the sleep event is triggered
     private float _sleepTimer;
