@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4184974599708808640}
   - component: {fileID: 4267658235304007320}
-  - component: {fileID: 5241966969836350189}
   m_Layer: 0
-  m_Name: PifctureFrame
+  m_Name: PifctureDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3856752514254973000}
+  - {fileID: 7450429788849382098}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4267658235304007320
@@ -55,34 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3113592, y: 1.5831219, z: 0.14114068}
   m_Center: {x: 0, y: 0.79156095, z: -0.0000002682209}
---- !u!54 &5241966969836350189
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2203263696202755495}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!1001 &3607196965181214627
+--- !u!1001 &6984950076756346169
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -139,8 +111,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8cc2abdd97cd8b4e9b336bc3df3ab8e, type: 3}
---- !u!4 &3856752514254973000 stripped
+--- !u!4 &7450429788849382098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d8cc2abdd97cd8b4e9b336bc3df3ab8e, type: 3}
-  m_PrefabInstance: {fileID: 3607196965181214627}
+  m_PrefabInstance: {fileID: 6984950076756346169}
   m_PrefabAsset: {fileID: 0}

@@ -12,7 +12,7 @@ public class IngameMenuController : MonoBehaviour
 
     private void Start()
     {
-        SleepManager.Instance.OnSleep += () => ShowGameOverMenu(GameOverMenu);
+        SleepManager.Instance.OnSleep.AddListener(() => ShowGameOverMenu(GameOverMenu));
     }
 
     [ContextMenu("ShowGameOverMenu")]
