@@ -6,18 +6,35 @@ using UnityEngine.SceneManagement;
 public class IngameMenuController : MonoBehaviour
 {
     public GameObject GameOverMenu;
+    public GameObject TryAgainMenu;
+
+    private bool isShowingMenu;
 
     private void Start()
     {
-        SleepManager.Instance.OnSleep += ShowGameOverMenu;
+        SleepManager.Instance.OnSleep += () => ShowGameOverMenu(GameOverMenu);
     }
 
     [ContextMenu("ShowGameOverMenu")]
-    public void ShowGameOverMenu()
+    public void ShowGameOverMenu(GameObject gameObject)
     {
-        GameOverMenu.SetActive(true);
-        GameOverMenu.transform.localScale = Vector3.zero;
-        GameOverMenu.transform.DOScale(Vector3.one, 1).SetEase(Ease.OutBounce);
+        gameObject.SetActive(true);
+        gameObject.transform.localScale = Vector3.zero;
+        gameObject.transform.DOScale(Vector3.one, 1).SetEase(Ease.OutBounce);
+    }
+
+    public void Update()
+    {
+        var pressed = Input.GetKeyDown(KeyCode.Escape);
+        if(pressed && !isShowingMenu)
+        {
+            ShowGameOverMenu(TryAgainMenu);
+            isShowingMenu = true;
+        } else if(pressed && isShowingMenu)
+        {
+            TryAgainMenu.SetActive(false);
+            isShowingMenu = false;
+        }
     }
 
     public void Retry()
